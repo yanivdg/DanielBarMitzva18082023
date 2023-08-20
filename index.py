@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Replace with your Google Photos API endpoint
-GOOGLE_PHOTOS_API_URL = "YOUR_GOOGLE_PHOTOS_API_ENDPOINT"
+GOOGLE_PHOTOS_API_URL = "https://photos.app.goo.gl/WCbCechDWLS9EpPGA"
 
 @app.route("/")
 def index():
