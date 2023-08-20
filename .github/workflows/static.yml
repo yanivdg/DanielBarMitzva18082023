@@ -47,5 +47,8 @@ jobs:
           python -m pip install requests
           python -m pip install beautifulsoup4
           python -m pip install flask
-          python ./static/py/app.py
         id: install-deps
+      - name: Run Program
+        run: |
+          python ./static/py/app.py
+        id: run-program
