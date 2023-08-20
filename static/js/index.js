@@ -3,7 +3,7 @@ async function fetchGooglePhotos() {
     const container = document.getElementById("photoContainer");
 
     // Replace with your actual Google Photos API endpoint
-    const apiUrl = "YOUR_GOOGLE_PHOTOS_API_ENDPOINT";
+    const apiUrl = "https://photos.app.goo.gl/WCbCechDWLS9EpPGA";
 
     try {
         const response = await fetch(apiUrl);
