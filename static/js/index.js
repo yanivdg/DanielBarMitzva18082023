@@ -1,34 +1,33 @@
-// Your JavaScript code here
-async function fetchGooglePhotos() {
-    const container = document.getElementById("photoContainer");
+// index.js
+function displayPhotos(images) {
+    const container = document.getElementById('photoContainer');
 
-    // Replace with your actual Google Photos API endpoint
-    const apiUrl = "https://photos.app.goo.gl/WCbCechDWLS9EpPGA";
+    images.forEach(image => {
+        const photoDiv = document.createElement('div');
+        photoDiv.classList.add('photo');
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        const img = document.createElement('img');
+        img.src = image.url;
+        img.alt = image.description;
+        img.classList.add('photo-image');
 
-        data.photos.forEach(photo => {
-            const photoDiv = document.createElement("div");
-            photoDiv.classList.add("photo");
+        const description = document.createElement('p');
+        description.textContent = image.description;
 
-            const img = document.createElement("img");
-            img.src = photo.url;
-            img.alt = photo.description;
-            img.classList.add("photo-image");
+        photoDiv.appendChild(img);
+        photoDiv.appendChild(description);
 
-            const description = document.createElement("p");
-            description.textContent = photo.description;
-
-            photoDiv.appendChild(img);
-            photoDiv.appendChild(description);
-
-            container.appendChild(photoDiv);
-        });
-    } catch (error) {
-        console.error("Error fetching Google Photos:", error);
-    }
+        container.appendChild(photoDiv);
+    });
 }
 
-fetchGooglePhotos();
+// Fetch image data from the server and call displayPhotos
+fetch('/photos')
+    .then(response => response.json())
+    .then(data => {
+        displayPhotos(data.images);
+    })
+    .catch(error => {
+        console.error("Error fetching image data:", error);
+    });
+
