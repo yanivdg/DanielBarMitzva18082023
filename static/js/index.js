@@ -1,39 +1,46 @@
 // index.js
 function displayPhotos(images) {
-    // Display the images using the provided displayPhotos function
-    // ... (rest of the code)
+    const photoContainer = document.getElementById('photoContainer');
+
+    images.forEach(image => {
+        const imgElement = document.createElement('img');
+        imgElement.src = image.url;
+        imgElement.alt = image.description;
+
+        const figureElement = document.createElement('figure');
+        figureElement.appendChild(imgElement);
+
+        const captionElement = document.createElement('figcaption');
+        captionElement.textContent = image.description;
+        figureElement.appendChild(captionElement);
+
+        photoContainer.appendChild(figureElement);
+    });
 }
 
-// Extract image data from the Google Photos link
-const SHARED_LINK = "https://photos.app.goo.gl/WCbCechDWLS9EpPGA";
-const image_data = [];
+function extractImagesFromHtml(html) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const image_data = [];
 
-// Fetch the HTML content of the SHARED_LINK
-// Define the headers to bypass CORS
-const headers = new Headers({
-    'Access-Control-Allow-Origin': '*', // Allow requests from any origin
-    // You can also set other headers if needed
-});
+    const imageElements = doc.querySelectorAll('div > a > div');
+    imageElements.forEach(divElement => {
+        const anchorElement = divElement.parentElement;
+        const imgElement = anchorElement.querySelector('img');
+        const description = imgElement.getAttribute('alt');
+        const url = anchorElement.getAttribute('href');
+        image_data.push({ url: url, description: description });
+    });
 
-// Define the options for the fetch request
-const fetchOptions = {
-    method: 'GET',
-    mode: 'cors',
-    headers: headers,
-};
+    return image_data;
+}
 
-// Fetch the HTML content of the shared link with CORS headers
-fetch(SHARED_LINK, fetchOptions)
-    .then(response => response.text())  // Get the HTML content as text
+fetch('/fetch_html')
+    .then(response => response.text())
     .then(html => {
-        // Parse the HTML content to extract image URLs and descriptions
-        // Populate the image_data array with objects containing URL and description
-        // Example: image_data.push({ url: imageURL, description: imageDescription });
-
-        // Once image_data is populated, call displayPhotos with the extracted image data
+        const image_data = extractImagesFromHtml(html);
         displayPhotos(image_data);
     })
     .catch(error => {
         console.error("Error fetching HTML content:", error);
     });
-
