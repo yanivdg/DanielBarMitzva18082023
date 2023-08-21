@@ -50,5 +50,5 @@ jobs:
         id: install-deps
       - name: Run Program
         run: |
-          python ./static/py/app.py
+          python static/py/app.py
         id: run-program
