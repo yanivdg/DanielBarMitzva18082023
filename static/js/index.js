@@ -6,7 +6,7 @@ async function getImages(albumUrl) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ albumUrl: albumUrl })
+        body: JSON.stringify({ shared_album_url: albumUrl })
     });
     const imagesBase64 = await response.json();
     return imagesBase64;
