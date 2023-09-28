@@ -1,7 +1,7 @@
 // index.js
 // Function to send a POST request and get the images
 async function getImages(albumUrl) {
-    const response = await fetch(' https://hcgny7ipna.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
+    const response = await fetch('https://hcgny7ipna.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
