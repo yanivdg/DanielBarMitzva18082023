@@ -1,46 +1,34 @@
 // index.js
-function displayPhotos(images) {
-    const photoContainer = document.getElementById('photoContainer');
-
-    images.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.src = image.url;
-        imgElement.alt = image.description;
-
-        const figureElement = document.createElement('figure');
-        figureElement.appendChild(imgElement);
-
-        const captionElement = document.createElement('figcaption');
-        captionElement.textContent = image.description;
-        figureElement.appendChild(captionElement);
-
-        photoContainer.appendChild(figureElement);
+// Function to send a POST request and get the images
+async function getImages(albumUrl) {
+    const response = await fetch(' https://hcgny7ipna.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ albumUrl: albumUrl })
     });
+    const imagesBase64 = await response.json();
+    return imagesBase64;
 }
 
-function extractImagesFromHtml(html) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-    const image_data = [];
-
-    const imageElements = doc.querySelectorAll('div > a > div');
-    imageElements.forEach(divElement => {
-        const anchorElement = divElement.parentElement;
-        const imgElement = anchorElement.querySelector('img');
-        const description = imgElement.getAttribute('alt');
-        const url = anchorElement.getAttribute('href');
-        image_data.push({ url: url, description: description });
-    });
-
-    return image_data;
+// Function to create an img element from a base64-encoded image
+function createImageElement(base64Image) {
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + base64Image;
+    return img;
 }
 
-fetch('/fetch_html')
-    .then(response => response.text())
-    .then(html => {
-        const image_data = extractImagesFromHtml(html);
-        displayPhotos(image_data);
-    })
-    .catch(error => {
-        console.error("Error fetching HTML content:", error);
-    });
+// Function to display the images on the page
+function displayImages(imagesBase64) {
+    var container = document.getElementById('image-container');
+    for (var i = 0; i < imagesBase64.length; i++) {
+        var img = createImageElement(imagesBase64[i]);
+        container.appendChild(img);
+    }
+}
+
+// Use the functions
+var albumUrl = 'https://photos.app.goo.gl/WCbCechDWLS9EpPGA';
+getImages(albumUrl).then(displayImages);
+
