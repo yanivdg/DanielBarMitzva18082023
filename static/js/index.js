@@ -4,7 +4,8 @@ async function getImages(albumUrl) {
     const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({ shared_album_url: albumUrl })
     });
