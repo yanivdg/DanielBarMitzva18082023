@@ -13,7 +13,7 @@ const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws
 });
 const imagesBase64 = await response.json();
 return imagesBase64;
-
+}
 // Function to create an img element from a base64-encoded image
 function createImageElement(base64Image) {
     var img = document.createElement('img');
