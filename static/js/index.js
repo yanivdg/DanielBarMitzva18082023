@@ -1,17 +1,18 @@
 // index.js
 // Function to send a POST request and get the images
 async function getImages(albumUrl) {
-    const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-        },
-        body: JSON.stringify({ shared_album_url: albumUrl })
-    });
-    const imagesBase64 = await response.json();
-    return imagesBase64;
-}
+//
+const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default/GooglePhotosAPIService', {
+    method: 'POST',
+    mode: 'cors', // add this line
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({ shared_album_url: albumUrl })
+});
+const imagesBase64 = await response.json();
+return imagesBase64;
 
 // Function to create an img element from a base64-encoded image
 function createImageElement(base64Image) {
