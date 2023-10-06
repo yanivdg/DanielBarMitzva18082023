@@ -1,6 +1,6 @@
 // index.js
 // Function to send a POST request and get the images
-async function getImages() {
+async function getImages(imagedata) {
     /*
 const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default', {
     method: 'GET',
@@ -14,8 +14,8 @@ return imagesBase64;
 */
   try {
     // Define the URL you want to make a GET request to.
-    const url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default'; // Replace with your API endpoint
-
+    const url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
+      
     // Make the GET request using fetch and await the response.
     const response = await fetch(url);
 
@@ -24,31 +24,32 @@ return imagesBase64;
       throw new Error('Request failed');
     }
     // Parse the response as JSON.
-    const data = await response.json();
+    const imagedata = await response.json();
     // Handle the response data here.
     console.log('Response:', data);
-    return data
+    return imagedata
   } catch (error) {
     // Handle errors here.
     console.error('Error:', error);
   }
 }
 // Function to create an img element from a base64-encoded image
-function createImageElement(base64Image) {
+function createImageElement(imagedata) {
     var img = document.createElement('img');
-    img.src = 'data:image/jpeg;base64,' + base64Image;
+    //img.src = 'data:image/jpeg;base64,' + base64Image;
+    img.src =  imagedata;
     return img;
 }
 
 // Function to display the images on the page
 function displayImages(imagesBase64) {
     var container = document.getElementById('image-container');
-    for (var i = 0; i < imagesBase64.length; i++) {
-        var img = createImageElement(imagesBase64[i]);
+    for (var i = 0; i < imagedata.length; i++) {
+        var img = createImageElement(imagedata[i]);
         container.appendChild(img);
     }
 }
 
 // Use the functions
-getImages().then(displayImages);
+getImages(imagedata).then(displayImages);
 
