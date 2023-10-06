@@ -1,13 +1,12 @@
 // index.js
 // Function to send a POST request and get the images
-async function getImages(albumUrl) {
+async function getImages() {
 const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default', {
-    method: 'POST',
+    method: 'GET',
     mode: 'cors', // add this line
     headers: {
         'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ shared_album_url: albumUrl })
 });
 const imagesBase64 = await response.json();
 return imagesBase64;
@@ -29,6 +28,5 @@ function displayImages(imagesBase64) {
 }
 
 // Use the functions
-var albumUrl = 'https://photos.app.goo.gl/WCbCechDWLS9EpPGA';
-getImages(albumUrl).then(displayImages);
+getImages().then(displayImages);
 
