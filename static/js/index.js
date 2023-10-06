@@ -1,4 +1,4 @@
-fetch('URL_OF_YOUR_AWS_SERVICE')
+fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Request failed');
