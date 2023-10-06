@@ -42,7 +42,7 @@ function createImageElement(imagedata) {
 }
 
 // Function to display the images on the page
-function displayImages(imagesBase64) {
+function displayImages(imagedata) {
     var container = document.getElementById('image-container');
     for (var i = 0; i < imagedata.length; i++) {
         var img = createImageElement(imagedata[i]);
