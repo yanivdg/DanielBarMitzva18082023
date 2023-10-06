@@ -33,6 +33,7 @@ return imagesBase64;
     console.error('Error:', error);
   }
 }
+/*
 // Function to create an img element from a base64-encoded image
 function createImageElement(imagedata) {
     var img = document.createElement('img');
@@ -49,7 +50,7 @@ function displayImages(imagedata) {
         container.appendChild(img);
     }
 }
-
+*/
 // Use the functions
-getImages().then(displayImages);
+getImages();//.then(displayImages);
 
