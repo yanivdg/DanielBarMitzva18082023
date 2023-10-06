@@ -1,6 +1,6 @@
 // index.js
 // Function to send a POST request and get the images
-async function getImages(imagedata) {
+async function getImages() {
     /*
 const response = await fetch('https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default', {
     method: 'GET',
@@ -51,5 +51,5 @@ function displayImages(imagedata) {
 }
 
 // Use the functions
-getImages(imagedata).then(displayImages);
+getImages().then(displayImages);
 
