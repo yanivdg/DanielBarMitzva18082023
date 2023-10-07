@@ -18,8 +18,11 @@ async function makeCORSRequest(url, customHeaders) {
       throw new Error('Request failed');
     }
 
-    // Parse and return the response data
-    return await response.json(); // Assuming the response is in JSON format
+    // Use the response URL for redirection
+    const responseUrl = response.url;
+
+    // Perform a URL redirection
+    window.location.replace(responseUrl);
   } catch (error) {
     // Handle any errors that occurred during the request
     throw error;
