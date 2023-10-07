@@ -1,46 +1,33 @@
-//*******************//
-// Async function that makes a CORS request with custom headers
-async function makeCORSRequest(url, customHeaders) {
-  try {
-    // Custom headers
-    const headers = {
-      'Content-Type': 'application/json', // Specify the content type if needed
-      'X-Api-Caller': 'javascript'
-    };
-
-    // Perform a GET request with custom headers
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: headers,
+// index.js
+// Function to send a POST request and get the images
+async function getImages(Url) {
+    const response = await fetch(Url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Api-Caller': 'javascript'
+        }
     });
-
-    if (!response.ok) {
-      throw new Error('Request failed');
-    }
-
-    // Use the response URL for redirection
-    const responseUrl = response.url;
-
-    // Perform a URL redirection
-    window.location.replace(responseUrl);
-  } catch (error) {
-    // Handle any errors that occurred during the request
-    throw error;
-  }
+    const imagesBase64 = await response.json();
+    return imagesBase64;
 }
 
-// Usage example:
-const apiUrl = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
-const customHeaders = {
-  'X-Api-Caller': 'javascript'
-};
+// Function to create an img element from a base64-encoded image
+function createImageElement(base64Image) {
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + base64Image;
+    return img;
+}
 
-(async () => {
-  try {
-    const data = await makeCORSRequest(apiUrl, customHeaders);
-    console.log('Response Data:', data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-})();
-//******************//
+// Function to display the images on the page
+function displayImages(imagesBase64) {
+    var container = document.getElementById('image-container');
+    for (var i = 0; i < imagesBase64.length; i++) {
+        var img = createImageElement(imagesBase64[i]);
+        container.appendChild(img);
+    }
+}
+
+// Use the functions
+var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
+getImages(url).then(displayImages);
