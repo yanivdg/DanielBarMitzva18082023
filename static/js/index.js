@@ -8,7 +8,7 @@ function makeCORSRequest() {
   };
 
   // Perform a GET request with custom headers
-  return fetch(url, {
+  return fetch(apiUrl, {
     method: 'GET',
     headers: headers,
   })
