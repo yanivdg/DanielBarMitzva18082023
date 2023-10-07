@@ -4,7 +4,6 @@ function makeCORSRequest() {
   const headers = {
     'Content-Type': 'application/json', // Specify the content type if needed
     'X-Api-Caller': 'javascript', // Use a custom header, e.g., 'X-Api-Caller'
-    'Access-Control-Allow-Origin':'*'
   };
 
   // Perform a GET request with custom headers
