@@ -16,7 +16,7 @@ async function fetchData() {
 }
 
 // Call the fetchData function to start the async operation
-fetchData();
+const data = await fetchData();
 
 async function makeCORSRequest(Url, headers) {
   try {
