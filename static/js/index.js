@@ -5,7 +5,8 @@ async function getImages(Url) {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-Api-Caller': 'javascript'
+            'X-Api-Caller': 'javascript',
+            'X-Content-Type-Options': 'nosniff'
         }
     });
     const imagesBase64 = await response.json();
