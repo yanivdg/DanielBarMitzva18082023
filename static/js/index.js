@@ -1,27 +1,15 @@
-// This is an example of using the async/await pattern within an async function
-
-async function fetchData() {
-  const apiUrl = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
-  const headers = {
-    'Content-Type': 'application/json', // Specify the content type if needed
-    'X-Api-Caller': 'javascript', // Use a custom header, e.g., 'X-Api-Caller'
-  };
-
+//*******************//
+// Async function that makes a CORS request with custom headers
+async function makeCORSRequest(url, customHeaders) {
   try {
-    const data = await makeCORSRequest(apiUrl, headers);
-    console.log('Response Data:', data);
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}
+    // Custom headers
+    const headers = {
+      'Content-Type': 'application/json', // Specify the content type if needed
+      'X-Api-Caller': 'javascript'
+    };
 
-// Call the fetchData function to start the async operation
-const data = await fetchData();
-
-async function makeCORSRequest(Url, headers) {
-  try {
     // Perform a GET request with custom headers
-    const response = await fetch(Url, {
+    const response = await fetch(url, {
       method: 'GET',
       headers: headers,
     });
@@ -38,9 +26,18 @@ async function makeCORSRequest(Url, headers) {
   }
 }
 
-try {
-  const data = await makeCORSRequest();
-  console.log('Response Data:', data);
-} catch (error) {
-  console.error('Error:', error);
-}
+// Usage example:
+const apiUrl = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
+const customHeaders = {
+  'X-Api-Caller': 'javascript'
+};
+
+(async () => {
+  try {
+    const data = await makeCORSRequest(apiUrl, customHeaders);
+    console.log('Response Data:', data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+})();
+//******************//
