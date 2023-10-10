@@ -9,9 +9,10 @@ async function getRedirectOrImages(Url) {
         }
     });
     const jsonresp = await response.json();
-    return jsonresp;
+    window.location.href = jsonresp.body;
+    //return jsonresp;
 }
 
 // Use the functions
 var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
-window.location.href = getRedirectOrImages(url).body;
+getRedirectOrImages(url)
