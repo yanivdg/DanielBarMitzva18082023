@@ -9,7 +9,7 @@ async function getRedirectOrImages(Url) {
         }
     });
     const jsonresp = await response.json();
-    window.location.href = jsonresp.body;
+    console.log(jsonresp.body);
     //return jsonresp;
 }
 
