@@ -26,10 +26,3 @@ async function getRedirectOrImages(Url) {
 var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
 getRedirectOrImages(url)
 
-
-// Define the headers you need to include
-const headers = {
-    'Authorization': 'Bearer YourAuthToken', // Replace with your authorization token if needed
-    'Other-Header': 'Header-Value', // Add any other headers your service requires
-};
-
