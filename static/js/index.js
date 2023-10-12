@@ -11,7 +11,7 @@ async function getRedirectOrImages(Url) {
 })
     .then(response => response.text()) // Assuming the service returns plain text
     .then(url => {
-        alert(statuscode)
+        console.log(response.text())
         // Use the URL from the service response to change the browser's location
         window.location.href = url;
     })
