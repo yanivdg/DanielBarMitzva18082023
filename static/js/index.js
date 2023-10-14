@@ -6,7 +6,7 @@ async function getRedirectOrImages(Url) {
     method: 'GET',
             headers: {
             'Content-Type': 'application/json',
-            'X-Api-Caller': 'javascript'
+            'X-Api-Caller': 'DanielBarMitzva18082023'
             }
 })
     .then(response => response.text()) // Assuming the service returns plain text
