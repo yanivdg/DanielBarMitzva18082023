@@ -31,6 +31,6 @@ async function getRedirectOrImages(Url) {
 // Use the functions
 var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
 if (window.location.href.indexOf("code") != -1)
-    url = window.location.href + "/" + url
+    url = url + "/" + window.location.href 
 getRedirectOrImages(url)
 
