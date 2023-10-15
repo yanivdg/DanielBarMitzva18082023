@@ -14,18 +14,17 @@ async function getRedirectOrImages(Url) {
         // Use the URL from the service response to change the browser's location
         window.location.href = url;
     })
-    //.then(response => response.json())
-    //.then(data => {
+    .then(response => response.json())
+    .then(data => {
                   // The response was a JSON object
                   // Process your data as a JavaScript object
-    //             console.log(
-    //}            );
+                     const jsonresp = await response.json();
+                    console.log(jsonresp.body);
+                    return jsonresp;
+                })
     .catch(error => {
         console.error('Error:', error);
     });
-    const jsonresp = await response.json();
-    console.log(jsonresp.body);
-    return jsonresp;
 }
 
 // Use the functions
