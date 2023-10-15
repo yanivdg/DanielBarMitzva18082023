@@ -34,7 +34,7 @@ if (window.location.href.indexOf("code") != -1)
 {
     const encodedString = encodeURIComponent(window.location.href);
     // Construct the URL with the encoded string as a query parameter
-    url = url + "?param=${encodedString}";
+    url = url + "?param="+encodedString";
 }
 getRedirectOrImages(url)
 
