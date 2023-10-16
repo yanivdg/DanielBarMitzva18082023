@@ -32,7 +32,7 @@ async function getRedirectOrImages(Url) {
 var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
 if (window.location.href.indexOf("?") != -1)
 {
-    queryparam = window.location.href.substring(window.location.href.indexOf("?"), window.location.href.length);
+    queryparam = window.location.href.substring(window.location.href.indexOf("?")+1, window.location.href.length);
     const encodedString = encodeURIComponent(queryparam);
     // Construct the URL with the encoded string as a query parameter
     url = url + "?" + encodedString;
