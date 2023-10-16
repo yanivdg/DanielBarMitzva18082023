@@ -5,12 +5,10 @@ body {
     padding: 0;
     background-color: #f5f5f5;
 }
-
 header {
-    background-color: #4285f4;
-    color: white;
-    text-align: center;
-    padding: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #ff9900; /* Text color */
+      text-shadow: 2px 2px 0 #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
 }
-
 /* ... other styles ... */
