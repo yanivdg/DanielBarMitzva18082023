@@ -47,7 +47,7 @@ imagedataPromise
     });
 
     // Flatten the nested arrays into a single array of productUrls
-    const flatbBseUrls = [].concat(...baseUrls);
+    const flatbBaseUrls = [].concat(...baseUrls);
 
     // Get the "image-container" div or create it if it doesn't exist
     let imageContainer = document.getElementById("image-container");
@@ -58,7 +58,7 @@ imagedataPromise
     }
 
     // Create and append <img> elements for each productUrl
-    flatProductUrls.forEach(imageUrl => {
+    flatbBaseUrls.forEach(imageUrl => {
       const imgElement = document.createElement("img");
       const desiredWidth = 800;
       const desiredHeight = 600;
