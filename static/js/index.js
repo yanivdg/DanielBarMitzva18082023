@@ -42,12 +42,12 @@ const imagedataPromise =getRedirectOrImages(url);
 imagedataPromise
   .then(imagedata => {
     // Use map to extract productUrls
-    const productUrls = imagedata.map(item => {
-      return item.mediaItems.map(mediaItem => mediaItem.productUrl);
+    const baseUrls = imagedata.map(item => {
+      return item.mediaItems.map(mediaItem => mediaItem.baseUrl);
     });
 
     // Flatten the nested arrays into a single array of productUrls
-    const flatProductUrls = [].concat(...productUrls);
+    const flatbBseUrls = [].concat(...baseUrls);
 
     // Get the "image-container" div or create it if it doesn't exist
     let imageContainer = document.getElementById("image-container");
@@ -60,11 +60,12 @@ imagedataPromise
     // Create and append <img> elements for each productUrl
     flatProductUrls.forEach(imageUrl => {
       const imgElement = document.createElement("img");
-      imgElement.src = imageUrl;
+      const desiredWidth = 800;
+      const desiredHeight = 600;
+      imgElement.src =  `${imageUrl}=w${desiredWidth}-h${desiredHeight}`  //imageUrl;
       imageContainer.appendChild(imgElement);
     });
   })
   .catch(error => {
     console.error('Error:', error);
   });
-
