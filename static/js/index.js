@@ -35,7 +35,7 @@ if (window.location.href.indexOf("?") != -1)
     queryparam = window.location.href.substring(window.location.href.indexOf("?"), window.location.href.length);
     const encodedString = encodeURIComponent(queryparam);
     // Construct the URL with the encoded string as a query parameter
-    url = url + "?params="+encodedString;
+    url = url + encodedString;
 }
 getRedirectOrImages(url)
 
