@@ -37,28 +37,34 @@ if (window.location.href.indexOf("?") != -1)
     // Construct the URL with the encoded string as a query parameter
     url = url + "?" + encodedString;
 }
-imagedata = getRedirectOrImages(url)
-// Use map to extract productUrls
-const productUrls = imagedata.map(item => {
-    return item.mediaItems.map(mediaItem => mediaItem.productUrl);
-});
 
-// Flatten the nested arrays into a single array of productUrls
-const flatProductUrls = [].concat(...productUrls);
+const imagedataPromise =getRedirectOrImages(url);
+imagedataPromise
+  .then(imagedata => {
+    // Use map to extract productUrls
+    const productUrls = imagedata.map(item => {
+      return item.mediaItems.map(mediaItem => mediaItem.productUrl);
+    });
 
-// Get the "image-container" div or create it if it doesn't exist
-const imageContainer = document.getElementById("image-container");
-if (!imageContainer) {
-  imageContainer = document.createElement("div");
-  imageContainer.id = "image-container";
-  document.body.appendChild(imageContainer); // Append it to the body
-}
+    // Flatten the nested arrays into a single array of productUrls
+    const flatProductUrls = [].concat(...productUrls);
 
-// Extract image URLs from the JSON data and add <img> elements to the container
-//const images = jsonData.images;
-flatProductUrls.forEach(imageUrl => {
-  const imgElement = document.createElement("img");
-  imgElement.src = imageUrl;
-  imageContainer.appendChild(imgElement);
-});
+    // Get the "image-container" div or create it if it doesn't exist
+    let imageContainer = document.getElementById("image-container");
+    if (!imageContainer) {
+      imageContainer = document.createElement("div");
+      imageContainer.id = "image-container";
+      document.body.appendChild(imageContainer); // Append it to the body
+    }
+
+    // Create and append <img> elements for each productUrl
+    flatProductUrls.forEach(imageUrl => {
+      const imgElement = document.createElement("img");
+      imgElement.src = imageUrl;
+      imageContainer.appendChild(imgElement);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
