@@ -30,4 +30,19 @@ img {
   padding: 10px; /* Padding for spacing and inner frame */
   background-color: #ffecb3; /* Inner frame color */
 }
+/* Style the container div */
+.video-container {
+      border: 10px solid #6c4747; /* Vintage border color */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Vintage shadow effect */
+      margin: 10px; /* Adjust margin for spacing */
+      padding: 10px; /* Padding for spacing and inner frame */
+      background-color: #ffecb3; /* Inner frame color */
+      width: 560px; /* Adjust the width as needed */
+    }
+
+/* Style the embedded iframe */
+    .video-container iframe {
+      width: 100%; /* Make the iframe responsive */
+      height: 315px; /* Adjust the height as needed */
+    }
 /* ... other styles ... */
