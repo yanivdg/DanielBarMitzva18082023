@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    text-align: center;
 }
 /* Define the 3D text effect */
 .header {
@@ -11,11 +12,13 @@ body {
   font-weight: bold;
   color: #ff9900; /* Text color */
   text-shadow: 2px 2px 0 #333, -2px -2px 0 #333, 2px -2px 0 #333, -2px 2px 0 #333;
+    text-align: center;
 }
 
 /* Add additional styles for other elements */
 p {
   font-size: 18px;
   color: #333;
+  text-align: center
 }
 /* ... other styles ... */
