@@ -8,6 +8,25 @@ body {
         /*background-color: #f5f5f5;*/
         text-align: center;
 }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.7); /* Background color with opacity */
+            padding: 20px;
+            text-align: right;
+        }
+
+        .english-text {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            line-height: 1.4;
+            background: rgba(255, 255, 255, 0.7); /* Background color with opacity */
+            padding: 20px;
+            text-align: left;
+        }
 /* Define the 3D text effect */
 .header {
   font-size: 36px;
