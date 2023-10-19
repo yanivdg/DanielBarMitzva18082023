@@ -30,6 +30,7 @@ img {
   padding: 10px; /* Padding for spacing and inner frame */
   background-color: #ffecb3; /* Inner frame color */
 }
+
 /* Style the container div */
 .video-container {
     display: flex;
@@ -38,16 +39,17 @@ img {
     background: linear-gradient(to bottom, #800000 10%, #000000 90%);
     padding: 20px;
     position: relative;
-    }
+}
 
 /* Style the embedded iframe */
-    .video-container iframe {
-        width: 800px; /* Adjust the width of the frame */
-        height: 600px; /* Adjust the height of the frame */
-        position: relative;
-        background-color: #000;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    }
+.video-container iframe {
+    width: 800px; /* Adjust the width of the frame */
+    height: 600px; /* Adjust the height of the frame */
+    position: relative;
+    background-color: #000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: 0 25px; /* Add margin to the left and right of the iframe */
+}
 
 /* Top Curtain */
 .video-container::before {
@@ -82,15 +84,15 @@ img {
     background: linear-gradient(to left, #800000 10%, #000000 90%);
 }
 
-/* Seats (Border at the bottom) */
-.video-container::after {
+/* Seats (Individual Seats) */
+.video-container::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 5px; /* Space between chairs and the bottom border */
     left: 0;
-    right: 0;
-    height: 50px; /* Adjust the chair height */
+    width: 20px; /* Adjust the chair width */
+    height: 40px; /* Adjust the chair height */
     background: yellow; /* Color of the seats */
-    border-top: 5px solid #000000; /* Divider between seats and frame */
+    margin: 5px; /* Adjust the spacing between seats */
 }
 /* ... other styles ... */
