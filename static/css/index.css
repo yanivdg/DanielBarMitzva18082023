@@ -95,7 +95,7 @@ img {
     right: 0;
     width: 100%; /* Adjust the width to cover the full width */
     height: 50px; /* Adjust the chair height */
-    background: yellow; /* Color of the seats */
+    background: red; /* Color of the seats */
     border-top: 5px solid #000000; /* Divider between seats and frame */
     background-image: repeating-linear-gradient(0deg, #000, #000 10px, transparent 10px, transparent 20px); /* Grid pattern for seats */
 }
