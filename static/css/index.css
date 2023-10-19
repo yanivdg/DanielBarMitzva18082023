@@ -40,10 +40,9 @@ img {
     padding: 20px; /* Padding for spacing and inner frame */
 }
 
-/* Style the embedded iframe inside the video container */
 .video-container iframe {
-    width: 800px;
-    height: 600px;
+    width: 800px; /* Adjust the width of the iframe */
+    height: 600px; /* Adjust the height of the iframe */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Vintage shadow effect */
     background-color: #ffecb3; /* Inner frame color */
 }
