@@ -83,7 +83,7 @@ img {
 }
 
 /* Seats (Border at the bottom) */
-.video-container::after {
+.video-container::before {
     content: '';
     position: absolute;
     bottom: 0;
