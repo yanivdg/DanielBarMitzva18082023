@@ -32,7 +32,7 @@ img {
 }
 
 /* Common frame style for all video containers */
-.video-frame {
+.video-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,18 +42,18 @@ img {
     margin: 20px; /* Adjust margin for spacing */
 }
 
-/* Style the embedded iframe */
-.video-frame iframe {
+/* Style the iframe container */
+.iframe-frame {
     width: 800px; /* Adjust the width of the frame */
     height: 600px; /* Adjust the height of the frame */
     position: relative;
     background-color: #000;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    margin: 0 25px; /* Add margin to the left and right of the iframe */
+    margin: 0 25px; /* Add margin to the left and right of the iframe container */
 }
 
 /* Top Curtain */
-.video-frame::before {
+.video-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -64,18 +64,18 @@ img {
 }
 
 /* Left Curtain */
-.video-frame::after {
+.video-container::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 25px; /* Adjust the curtain width */
     height: 100%;
-    background: linear-gradient to right, #800000 10%, #000000 90%);
+    background: linear-gradient(to right, #800000 10%, #000000 90%);
 }
 
 /* Right Curtain */
-.video-frame iframe::after {
+.iframe-frame::after {
     content: '';
     position: absolute;
     top: 0;
@@ -86,7 +86,7 @@ img {
 }
 
 /* Seats (Individual Seats) */
-.video-frame::before {
+.video-container::before {
     content: '';
     position: absolute;
     bottom: 5px; /* Space between chairs and the bottom border */
