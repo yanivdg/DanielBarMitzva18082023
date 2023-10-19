@@ -92,5 +92,6 @@ img {
     height: 50px; /* Adjust the chair height */
     background: #800000; /* Color of the chairs */
     border-top: 5px solid #000000; /* Divider between seats and frame */
+    background-image: repeating-linear-gradient(0deg, #000, #000 10px, transparent 10px, transparent 20px); /* Grid pattern for seats */
 }
 /* ... other styles ... */
