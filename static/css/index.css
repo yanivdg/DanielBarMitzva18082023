@@ -32,17 +32,45 @@ img {
 }
 
 
-/* Style the video container with border frame */
+/* Style the video container with movie theater design */
 .video-container {
     position: relative;
-    border: 10px solid #800000; /* Frame border color */
-    margin: 20px; /* Adjust margin for spacing */
-    padding: 20px; /* Padding for spacing and inner frame */
+    background: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px; /* Max width for the theater frame */
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio for the frame */
+    margin: 0 auto; /* Center the frame horizontally */
 }
 
+/* Left Curtain */
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%; /* Adjust the curtain width */
+    height: 100%;
+    background: linear-gradient(to right, #000, #800000, #000);
+    z-index: 1; /* Place the curtain above the frame */
+}
+
+/* Right Curtain */
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%; /* Adjust the curtain width */
+    height: 100%;
+    background: linear-gradient(to left, #000, #800000, #000);
+    z-index: 1; /* Place the curtain above the frame */
+}
+
+/* Seats (Individual Seats) */
 .video-container iframe {
-    width: 800px; /* Adjust the width of the iframe */
-    height: 600px; /* Adjust the height of the iframe */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Vintage shadow effect */
-    background-color: #ffecb3; /* Inner frame color */
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 2; /* Place the iframe above the curtains */
 }
