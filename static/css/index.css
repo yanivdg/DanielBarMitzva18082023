@@ -9,7 +9,7 @@ body {
         text-align: center;
 }
         .text-container {
-            display: flex;
+           display: flex;
             flex-direction: column;
             font-family: "Times New Roman", Times, serif;
             font-size: 18px;
@@ -17,7 +17,7 @@ body {
             background: transparent; /* Transparent background */
             padding: 20px;
             text-align: right;
-            color: white; /* Text color is white */
+            color: white !important; /* Text color is explicitly set to white */
         }
 
         .english-text {
