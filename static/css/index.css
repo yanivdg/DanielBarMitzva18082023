@@ -32,22 +32,34 @@ img {
 }
 /* Style the container div */
 .video-container {
-  display: flex;
+  /*display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; *//* Optionally set the height to fill the viewport */
+  height: 100vh; Optionally set the height to fill the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #800000 10%, #000000 90%);
+    padding: 20px;
     }
 
 /* Style the embedded iframe */
     .video-container iframe {
-        background-image: url('https://static.vecteezy.com/system/resources/previews/001/227/422/original/cinema-movie-theater-with-blank-screen-and-red-seat-vector.jpg'); /* Image of movie theater frame */
+        /*
+        background-image: url('https://static.vecteezy.com/system/resources/previews/001/227/422/original/cinema-movie-theater-with-blank-screen-and-red-seat-vector.jpg');  Image of movie theater frame
         background-size: cover;
-        width: 800px; /* Adjust the width of the frame */
-        height: 600px; /* Adjust the height of the frame */
+        width: 800px;  Adjust the width of the frame 
+        height: 600px;  Adjust the height of the frame 
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        padding: 20px;
+        padding: 20px;*/
+        width: 800px;  /*Adjust the width of the frame*/ 
+        height: 600px; /*Adjust the height of the frame*/
+        border-top: 50px solid #800000; /* Curtain */
+        border-left: 25px solid #800000; /* Curtain */
+        border-right: 25px solid #800000; /* Curtain */
+        border-bottom: 50px solid #000000; /* Chairs */
     }
 /* ... other styles ... */
