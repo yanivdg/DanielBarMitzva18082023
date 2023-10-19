@@ -31,46 +31,73 @@ img {
   background-color: #ffecb3; /* Inner frame color */
 }
 
-
-/* Style the video container with movie theater design */
 .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #800000 10%, #000000 90%);
+    padding: 20px;
     position: relative;
-    background: #000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    max-width: 800px; /* Max width for the theater frame */
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio for the frame */
-    margin: 0 auto; /* Center the frame horizontally */
+    margin: 0 auto; /* Center the container horizontally */
+    width: 800px; /* Match the width of the iframe */
+    height: 600px; /* Match the height of the iframe */
 }
 
-/* Left Curtain */
+/* Style the embedded iframe */
+.video-container iframe {
+    width: 100%; /* Allow the iframe to take the full width */
+    height: 100%; /* Allow the iframe to take the full height */
+    position: relative;
+    background-color: #000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Top Curtain */
 .video-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 10%; /* Adjust the curtain width */
-    height: 100%;
-    background: linear-gradient(to right, #000, #800000, #000);
-    z-index: 1; /* Place the curtain above the frame */
+    width: 100%;
+    height: 50px; /* Adjust the curtain height */
+    background: linear-gradient(to bottom, #800000 10%, #000000 90%);
 }
 
-/* Right Curtain */
+/* Left Curtain */
 .video-container::after {
     content: '';
     position: absolute;
     top: 0;
-    right: 0;
-    width: 10%; /* Adjust the curtain width */
+    left: 0;
+    width: 25px; /* Adjust the curtain width */
     height: 100%;
-    background: linear-gradient(to left, #000, #800000, #000);
-    z-index: 1; /* Place the curtain above the frame */
+    background: linear-gradient(to right, #800000 10%, #000000 90%);
 }
 
-/* Seats (Individual Seats) */
-.video-container iframe {
-    width: 100%;
+/* Right Curtain */
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px; /* Adjust the curtain width */
     height: 100%;
-    background-color: #000;
-    z-index: 2; /* Place the iframe above the curtains */
+    background: linear-gradient(to left, #800000 10%, #000000 90%);
 }
+
+/* Seats (Border at the bottom) */
+.video-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; /* Adjust the width to cover the full width */
+    height: 50px; /* Adjust the chair height */
+    background: yellow; /* Color of the seats */
+    border-top: 5px solid #000000; /* Divider between seats and frame */
+    background-image: repeating-linear-gradient(0deg, #000, #000 10px, transparent 10px, transparent 20px); /* Grid pattern for seats */
+}
+
+/*more style here*/
