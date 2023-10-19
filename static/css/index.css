@@ -31,18 +31,19 @@ img {
   background-color: #ffecb3; /* Inner frame color */
 }
 
-/* Style the container div */
-.video-container {
+/* Common frame style for all video containers */
+.video-frame {
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #800000 10%, #000000 90%);
     padding: 20px;
     position: relative;
+    margin: 20px; /* Adjust margin for spacing */
 }
 
 /* Style the embedded iframe */
-.video-container iframe {
+.video-frame iframe {
     width: 800px; /* Adjust the width of the frame */
     height: 600px; /* Adjust the height of the frame */
     position: relative;
@@ -52,7 +53,7 @@ img {
 }
 
 /* Top Curtain */
-.video-container::before {
+.video-frame::before {
     content: '';
     position: absolute;
     top: 0;
@@ -63,18 +64,18 @@ img {
 }
 
 /* Left Curtain */
-.video-container::after {
+.video-frame::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 25px; /* Adjust the curtain width */
     height: 100%;
-    background: linear-gradient(to right, #800000 10%, #000000 90%);
+    background: linear-gradient to right, #800000 10%, #000000 90%);
 }
 
 /* Right Curtain */
-.video-container iframe::after {
+.video-frame iframe::after {
     content: '';
     position: absolute;
     top: 0;
@@ -85,7 +86,7 @@ img {
 }
 
 /* Seats (Individual Seats) */
-.video-container::before {
+.video-frame::before {
     content: '';
     position: absolute;
     bottom: 5px; /* Space between chairs and the bottom border */
