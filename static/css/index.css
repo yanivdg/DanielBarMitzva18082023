@@ -82,16 +82,15 @@ img {
     background: linear-gradient(to left, #800000 10%, #000000 90%);
 }
 
-/* Chairs (Border at the bottom) */
-.video-container iframe::before {
+/* Seats (Border at the bottom) */
+.video-container::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 50px; /* Adjust the chair height */
-    background: #800000; /* Color of the chairs */
+    background: #800000; /* Color of the seats */
     border-top: 5px solid #000000; /* Divider between seats and frame */
-    background-image: repeating-linear-gradient(0deg, #000, #000 10px, transparent 10px, transparent 20px); /* Grid pattern for seats */
 }
 /* ... other styles ... */
