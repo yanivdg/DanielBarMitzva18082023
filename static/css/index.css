@@ -34,9 +34,10 @@ body {
   background-color: #f0f0f0; /* Background color for the body */
   height: 100vh;
   margin: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+          display: flex;
+          justify-content: space-between;
+        text-align: center;
+          padding: 10px;
 }
         .text-container {
            display: flex;
