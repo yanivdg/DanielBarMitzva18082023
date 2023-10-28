@@ -20,16 +20,23 @@ body {
                 url('https://th.bing.com/th/id/OIG.F8GL54hw2LY01T6SIUbQ?pid=ImgGn'),
                 url('https://th.bing.com/th/id/OIG.pCFIAd4TVJsxN2TWRWrr?pid=ImgGn'),
                 url('https://th.bing.com/th/id/OIG.4XT57HS8l5YX5yGjtSzi?pid=ImgGn');
-        background-repeat: no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repeat,no-repleat;
-        background-size: cover, cover, cover,cover, cover, cover,cover, cover, cover,cover, cover, cover,cover, cover, cover,cover, cover, cover,cover;
-        background-position: center, center, center,center, center, center,center, center, center,center, center, center,center, center, center,center, center, center,center;
-        /*font-family: Arial, sans-serif;*/
-        /*margin: 0;*/
-        /*padding: 0;*/
-        /*background-color: #f5f5f5;*/
-        text-align: center;
-        width: 20%;
-        height: 20vh;
+         background-size: 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
+    5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
+    5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
+    5.26% auto, 5.26% auto;
+  background-position: 
+    0 0, 5.26% 0, 10.52% 0, 15.78% 0, 21.04% 0, 26.3% 0, 31.56% 0,
+    36.82% 0, 42.08% 0, 47.34% 0, 52.6% 0, 57.86% 0, 63.12% 0, 68.38% 0,
+    73.64% 0, 78.9% 0, 84.16% 0, 89.42% 0, 94.68% 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-color: #f0f0f0; /* Background color for the body */
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
         .text-container {
            display: flex;
