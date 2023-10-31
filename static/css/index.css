@@ -1,43 +1,14 @@
 /* Your CSS styles here */
 body {
-        background-image: 
-                url('https://th.bing.com/th/id/OIG.SngeX.zc71CxwRxhMzhW?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.X8ivV5VfecvCgSsFGYEW?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.JGgBozzEjjuPxymkCymA?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.L1SPXBXOVfY.nMFEXKry?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.PIG8RPNSv0S799BruNxr?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ZBYCELFbseUESxeWkRfJ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ZQhV50Sm6cPz10SDWys3?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.JALVY84WrzVC9NezC9Hk?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.AMamtlaAUg46pp9X8tJZ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.EfqMvxaQtvNx8nIyJ7ST?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.z7sHJc_7aEAYNxJ4v0C_?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.Iy7S8drB47I5u_9XOBMU?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ouVx98avLPoF2W70BVCo?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.lL74NYbVxAu8sGDcB4oX?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.z2Zw0A4K3ANOomdH7N0z?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.yRMtvHFY5fayUlk.l_A0?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.F8GL54hw2LY01T6SIUbQ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.pCFIAd4TVJsxN2TWRWrr?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.4XT57HS8l5YX5yGjtSzi?pid=ImgGn');
-         background-size: 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
-    5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
-    5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto, 5.26% auto,
-    5.26% auto, 5.26% auto;
-  background-position: 
-    0 0, 5.26% 0, 10.52% 0, 15.78% 0, 21.04% 0, 26.3% 0, 31.56% 0,
-    36.82% 0, 42.08% 0, 47.34% 0, 52.6% 0, 57.86% 0, 63.12% 0, 68.38% 0,
-    73.64% 0, 78.9% 0, 84.16% 0, 89.42% 0, 94.68% 0;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
-    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
-    no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: #f0f0f0; /* Background color for the body */
   height: 100vh;
   margin: 0;
-          display: flex;
-          justify-content: space-between;
-        text-align: center;
-          padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
         .text-container {
            display: flex;
