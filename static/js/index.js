@@ -1,24 +1,24 @@
 // index.js
 const images = [
-                url('https://th.bing.com/th/id/OIG.SngeX.zc71CxwRxhMzhW?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.X8ivV5VfecvCgSsFGYEW?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.JGgBozzEjjuPxymkCymA?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.L1SPXBXOVfY.nMFEXKry?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.PIG8RPNSv0S799BruNxr?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ZBYCELFbseUESxeWkRfJ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ZQhV50Sm6cPz10SDWys3?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.JALVY84WrzVC9NezC9Hk?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.AMamtlaAUg46pp9X8tJZ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.EfqMvxaQtvNx8nIyJ7ST?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.z7sHJc_7aEAYNxJ4v0C_?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.Iy7S8drB47I5u_9XOBMU?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.ouVx98avLPoF2W70BVCo?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.lL74NYbVxAu8sGDcB4oX?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.z2Zw0A4K3ANOomdH7N0z?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.yRMtvHFY5fayUlk.l_A0?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.F8GL54hw2LY01T6SIUbQ?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.pCFIAd4TVJsxN2TWRWrr?pid=ImgGn'),
-                url('https://th.bing.com/th/id/OIG.4XT57HS8l5YX5yGjtSzi?pid=ImgGn');
+                'https://th.bing.com/th/id/OIG.SngeX.zc71CxwRxhMzhW?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.X8ivV5VfecvCgSsFGYEW?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.JGgBozzEjjuPxymkCymA?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.L1SPXBXOVfY.nMFEXKry?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.PIG8RPNSv0S799BruNxr?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.ZBYCELFbseUESxeWkRfJ?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.ZQhV50Sm6cPz10SDWys3?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.JALVY84WrzVC9NezC9Hk?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.AMamtlaAUg46pp9X8tJZ?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.EfqMvxaQtvNx8nIyJ7ST?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.z7sHJc_7aEAYNxJ4v0C_?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.Iy7S8drB47I5u_9XOBMU?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.ouVx98avLPoF2W70BVCo?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.lL74NYbVxAu8sGDcB4oX?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.z2Zw0A4K3ANOomdH7N0z?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.yRMtvHFY5fayUlk.l_A0?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.F8GL54hw2LY01T6SIUbQ?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.pCFIAd4TVJsxN2TWRWrr?pid=ImgGn',
+                'https://th.bing.com/th/id/OIG.4XT57HS8l5YX5yGjtSzi?pid=ImgGn'
     ];
 let currentIndex = 0;
 
