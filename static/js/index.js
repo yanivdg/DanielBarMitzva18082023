@@ -1,9 +1,9 @@
 // index.js
 const images = [
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_1.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_2.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_3.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_4.jpg'
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_1.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_2.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_3.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_4.jpg'
     ];
 let currentIndex = 0;
 
