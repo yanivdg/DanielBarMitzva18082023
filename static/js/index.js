@@ -1,9 +1,9 @@
 // index.js
 const images = [
-'https://github.com/yanivdg/DanielBarMitzva18082023/blob/main/static/image/OIG4_1.jpg?raw=true',
-'https://github.com/yanivdg/DanielBarMitzva18082023/blob/main/static/image/OIG4_2.jpg?raw=true',
-'https://github.com/yanivdg/DanielBarMitzva18082023/blob/main/static/image/OIG4_3.jpg?raw=true',
-'https://github.com/yanivdg/DanielBarMitzva18082023/blob/main/static/image/OIG4_4.jpg?raw=true'
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_1.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_2.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_3.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@b5d12214ff86ca8c26a0e41eaa14c3382e18278f/static/image/OIG4_4.jpg'
     ];
 let currentIndex = 0;
 
