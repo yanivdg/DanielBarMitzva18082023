@@ -3,7 +3,12 @@ const images = [
 'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_1.jpg',
 'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_2.jpg',
 'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_3.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_4.jpg'
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_4.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_6_Numbers.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_7_Numbers.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_8_Numbers.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_9_Numbers.jpg',
+'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_10_Numbers.jpg'
     ];
 let currentIndex = 0;
 
