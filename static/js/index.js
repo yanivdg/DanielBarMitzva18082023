@@ -49,8 +49,8 @@ async function getRedirectOrImages(Url) {
         if (contentType && contentType.includes('application/json')) {
             // JSON response
             const data = await response.json();
-            // Process your data as a JavaScript object
-            console.log(data.body);
+            // Debug: log the data to understand its structure
+            console.log('Response data:', data);
             return data;
         } else {
             // Non-JSON response, treat it as a URL
