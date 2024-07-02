@@ -80,32 +80,48 @@ if (window.location.href.indexOf("?") != -1)
 }
 
 const imagedataPromise = getRedirectOrImages(url);
+
 imagedataPromise.then(imagedata => {
+    // Debug: log the imagedata to understand its structure
+    console.log('imagedata:', imagedata);
+
+    if (!imagedata || !Array.isArray(imagedata)) {
+        throw new Error('Invalid data format: imagedata is not an array');
+    }
+
     // Use map to extract productUrls
     const baseUrls = imagedata.map(item => {
-      return item.mediaItems.map(mediaItem => mediaItem.baseUrl);
+        if (!item.mediaItems || !Array.isArray(item.mediaItems)) {
+            throw new Error('Invalid data format: item.mediaItems is not an array');
+        }
+        return item.mediaItems.map(mediaItem => mediaItem.baseUrl);
     });
 
     // Flatten the nested arrays into a single array of productUrls
-    const flatbBaseUrls = [].concat(...baseUrls);
+    const flatBaseUrls = baseUrls.flat();
 
     // Get the "image-container" div or create it if it doesn't exist
     let imageContainer = document.getElementById("image-container");
     if (!imageContainer) {
-      imageContainer = document.createElement("div");
-      imageContainer.id = "image-container";
-      document.body.appendChild(imageContainer); // Append it to the body
+        imageContainer = document.createElement("div");
+        imageContainer.id = "image-container";
+        document.body.appendChild(imageContainer); // Append it to the body
     }
 
     // Create and append <img> elements for each productUrl
-    flatbBaseUrls.forEach(imageUrl => {
-      const imgElement = document.createElement("img");
-      const desiredWidth = 800;
-      const desiredHeight = 600;
-      imgElement.src =  `${imageUrl}=w${desiredWidth}-h${desiredHeight}`  //imageUrl;
-      imageContainer.appendChild(imgElement);
+    flatBaseUrls.forEach(imageUrl => {
+        const imgElement = document.createElement("img");
+        const desiredWidth = 800;
+        const desiredHeight = 600;
+        imgElement.src = `${imageUrl}=w${desiredWidth}-h${desiredHeight}`; // Correct URL formatting
+        imageContainer.appendChild(imgElement);
     });
-  })
-  .catch(error => {
+})
+.catch(error => {
     console.error('Error:', error);
-  });
+    // Optionally display the error on the page
+    const errorMessage = document.createElement('div');
+    errorMessage.style.color = 'red';
+    errorMessage.textContent = `Error: ${error.message}`;
+    document.body.appendChild(errorMessage);
+});
