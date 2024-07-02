@@ -79,9 +79,8 @@ if (window.location.href.indexOf("?") != -1)
     url = url + "?" + encodedString;
 }
 
-const imagedataPromise =getRedirectOrImages(url);
-imagedataPromise
-  .then(imagedata => {
+const imagedataPromise = getRedirectOrImages(url);
+imagedataPromise.then(imagedata => {
     // Use map to extract productUrls
     const baseUrls = imagedata.map(item => {
       return item.mediaItems.map(mediaItem => mediaItem.baseUrl);
