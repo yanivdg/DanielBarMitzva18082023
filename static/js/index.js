@@ -89,9 +89,27 @@ imagedataPromise.then(imagedata => {
         throw new Error('Invalid data format: imagedata is not an array');
     }
 
+const imagedataPromise = getRedirectOrImages(url);
+
+imagedataPromise.then(imagedata => {
+    // Debug: log the imagedata to understand its structure
+    console.log('imagedata:', imagedata);
+
+    // Check if imagedata is valid
+    if (!imagedata) {
+        console.error('imagedata is undefined or null');
+        throw new Error('imagedata is undefined or null');
+    }
+
+    if (!Array.isArray(imagedata)) {
+        console.error('imagedata is not an array. Actual data:', imagedata);
+        throw new Error('Invalid data format: imagedata is not an array');
+    }
+
     // Use map to extract productUrls
     const baseUrls = imagedata.map(item => {
         if (!item.mediaItems || !Array.isArray(item.mediaItems)) {
+            console.error('item.mediaItems is not an array. Actual data:', item.mediaItems);
             throw new Error('Invalid data format: item.mediaItems is not an array');
         }
         return item.mediaItems.map(mediaItem => mediaItem.baseUrl);
