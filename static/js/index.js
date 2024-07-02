@@ -1,24 +1,24 @@
 // index.js
 const images = [
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_1.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_2.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_3.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_4.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_6_Numbers.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_7_Numbers.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_8_Numbers.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_9_Numbers.jpg',
-'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_10_Numbers.jpg'
-    ];
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_1.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_2.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_3.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@4a545c0ecbe4da0183ab3bcbec6b7659bae3583c/static/image/OIG4_4.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_6_Numbers.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_7_Numbers.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_8_Numbers.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_9_Numbers.jpg',
+    'https://cdn.jsdelivr.net/gh/yanivdg/DanielBarMitzva18082023@d2a5639fd9d57de0e9681f7affc0a9c3acaff0d5/static/image/28_10_Numbers.jpg'
+];
 let currentIndex = 0;
 
 function changeBackgroundImage() {
-  document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+    document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
 
-  currentIndex++;
-  if (currentIndex >= images.length) {
-    currentIndex = 0;
-  }
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
 }
 
 // Initial background image
@@ -26,7 +26,6 @@ changeBackgroundImage();
 
 // Change background image every 5 seconds
 setInterval(changeBackgroundImage, 5000);
-
 
 // Function to send a POST request and get the images
 async function getRedirectOrImages(Url) {
@@ -71,23 +70,12 @@ async function getRedirectOrImages(Url) {
 
 // Use the functions
 var url = 'https://vokhppyw7l.execute-api.us-west-1.amazonaws.com/default';
-if (window.location.href.indexOf("?") != -1)
-{
-    queryparam = window.location.href.substring(window.location.href.indexOf("?")+1, window.location.href.length);
+if (window.location.href.indexOf("?") != -1) {
+    const queryparam = window.location.href.substring(window.location.href.indexOf("?") + 1);
     const encodedString = encodeURIComponent(queryparam);
     // Construct the URL with the encoded string as a query parameter
     url = url + "?" + encodedString;
 }
-
-const imagedataPromise = getRedirectOrImages(url);
-
-imagedataPromise.then(imagedata => {
-    // Debug: log the imagedata to understand its structure
-    console.log('imagedata:', imagedata);
-
-    if (!imagedata || !Array.isArray(imagedata)) {
-        throw new Error('Invalid data format: imagedata is not an array');
-    }
 
 const imagedataPromise = getRedirectOrImages(url);
 
