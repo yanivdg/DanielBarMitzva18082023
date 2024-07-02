@@ -40,7 +40,14 @@ async function getRedirectOrImages(Url) {
             }
         });
 
-        if (response.headers.get('Content-Type').includes('application/json')) {
+        // Check if the response is OK (status code 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Check if the response is JSON
+        const contentType = response.headers.get('Content-Type');
+        if (contentType && contentType.includes('application/json')) {
             // JSON response
             const data = await response.json();
             // Process your data as a JavaScript object
@@ -54,6 +61,11 @@ async function getRedirectOrImages(Url) {
         }
     } catch (error) {
         console.error('Error:', error);
+        // Display the error message on the page
+        const errorMessage = document.createElement('div');
+        errorMessage.style.color = 'red';
+        errorMessage.textContent = `Error: ${error.message}`;
+        document.body.appendChild(errorMessage);
     }
 }
 
